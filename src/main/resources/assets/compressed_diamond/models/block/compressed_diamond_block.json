@@ -1,0 +1,6 @@
+{
+  "parent": "compressed_diamond:block/cube_all",
+  "textures": {
+    "all": "compressed_diamond:block/compressed_diamond_block"
+  }
+}

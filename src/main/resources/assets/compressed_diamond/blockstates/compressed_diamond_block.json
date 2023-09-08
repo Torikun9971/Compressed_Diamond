@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "compressed_diamond:block/compressed_diamond_block"
+    }
+  }
+}

@@ -1,3 +1,18 @@
 {
-"itemGroup.compressed_diamond" : "Compressed Diamond"
+  "itemGroup.Diamond" : "ダイヤモンド",
+  "item.compressed_diamond.compressed_diamond_block" : "圧縮ダイヤモンドブロック",
+  "item.compressed_diamond.black_diamond" : "ブラックダイヤモンド",
+  "item.compressed_diamond.gray_diamond" : "グレーダイヤモンド",
+  "item.compressed_diamond.color_less_diamond" : "カラーレスダイヤモンド",
+  "item.compressed_diamond.brown_diamond" : "ブラウンダイヤモンド",
+  "item.compressed_diamond.yellow_diamond" : "イエローダイヤモンド",
+  "item.compressed_diamond.orange_diamond" : "オレンジダイヤモンド",
+  "item.compressed_diamond.violet_diamond" : "バイオレットダイヤモンド",
+  "item.compressed_diamond.purple_diamond" : "パープルダイヤモンド",
+  "item.compressed_diamond.white_diamond" : "ホワイトダイヤモンド",
+  "item.compressed_diamond.pink_diamond" : "ピンクダイヤモンド",
+  "item.compressed_diamond.green_diamond" : "グリーンダイヤモンド",
+  "item.compressed_diamond.blue_diamond" : "ブルーダイヤモンド",
+  "item.compressed_diamond.red_diamond" : "レッドダイヤモンド",
+  "item.compressed_diamond.item_compressed_diamond_block" : "圧縮ダイヤモンドブロック"
 }
