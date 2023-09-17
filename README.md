@@ -4,7 +4,7 @@
 
 ## サポート
 
-| 💎 | Forge | Fabric |
+| 🌈💎 | Forge | Fabric |
 | ---- | -------- | ---- |
 | <p align="center">1.20.X | <p align="center">❎* | <p align="center">⚠* |
 | 1.16.X ~ 1.19.X | <p align="center">⚠* | <p align="center">⚠* |
