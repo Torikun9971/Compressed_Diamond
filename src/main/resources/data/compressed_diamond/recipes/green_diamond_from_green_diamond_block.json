@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "green_diamond",
+  "ingredients": [
+    {
+      "item": "compressed_diamond:green_diamond_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "compressed_diamond:green_diamond"
+  }
+}

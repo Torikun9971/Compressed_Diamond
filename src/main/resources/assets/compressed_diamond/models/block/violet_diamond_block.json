@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "compressed_diamond:block/violet_diamond_block"
+  }
+}

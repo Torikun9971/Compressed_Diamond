@@ -14,5 +14,18 @@
   "item.compressed_diamond.green_diamond" : "グリーンダイヤモンド",
   "item.compressed_diamond.blue_diamond" : "ブルーダイヤモンド",
   "item.compressed_diamond.red_diamond" : "レッドダイヤモンド",
-  "item.compressed_diamond.item_compressed_diamond_block" : "圧縮ダイヤモンドブロック"
+  "item.compressed_diamond.item_compressed_diamond_block" : "圧縮ダイヤモンドブロック",
+  "block.compressed_diamond.black_diamond_block" : "ブラックダイヤモンドブロック",
+  "block.compressed_diamond.gray_diamond_block" : "グレーダイヤモンドブロック",
+  "block.compressed_diamond.color_less_diamond_block" : "カラーレスダイヤモンドブロック",
+  "block.compressed_diamond.brown_diamond_block" : "ブラウンダイヤモンドブロック",
+  "block.compressed_diamond.yellow_diamond_block" : "イエローダイヤモンドブロック",
+  "block.compressed_diamond.orange_diamond_block" : "オレンジダイヤモンドブロック",
+  "block.compressed_diamond.violet_diamond_block" : "バイオレットダイヤモンドブロック",
+  "block.compressed_diamond.purple_diamond_block" : "パープルダイヤモンドブロック",
+  "block.compressed_diamond.white_diamond_block" : "ホワイトダイヤモンドブロック",
+  "block.compressed_diamond.pink_diamond_block" : "ピンクダイヤモンドブロック",
+  "block.compressed_diamond.green_diamond_block" : "グリーンダイヤモンドブロック",
+  "block.compressed_diamond.blue_diamond_block" : "ブルーダイヤモンドブロック",
+  "block.compressed_diamond.red_diamond_block" : "レッドダイヤモンドブロック"
 }
