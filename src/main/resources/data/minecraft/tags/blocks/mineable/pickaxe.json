@@ -1,0 +1,18 @@
+{
+  "replace" : false,
+  "values" : [
+    "compressed_diamond:black_diamond_block",
+    "compressed_diamond:gray_diamond_block",
+    "compressed_diamond:color_less_diamond_block",
+    "compressed_diamond:brown_diamond_block",
+    "compressed_diamond:yellow_diamond_block",
+    "compressed_diamond:orange_diamond_block",
+    "compressed_diamond:violet_diamond_block",
+    "compressed_diamond:purple_diamond_block",
+    "compressed_diamond:white_diamond_block",
+    "compressed_diamond:pink_diamond_block",
+    "compressed_diamond:green_diamond_block",
+    "compressed_diamond:blue_diamond_block",
+    "compressed_diamond:red_diamond_block"
+  ]
+}

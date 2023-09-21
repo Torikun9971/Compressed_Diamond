@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "white_diamond_block",
+  "key": {
+    "#": {
+      "item": "compressed_diamond:white_diamond"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "compressed_diamond:white_diamond_block"
+  }
+}

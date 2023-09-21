@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "yellow_diamond",
+  "ingredients": [
+    {
+      "item": "compressed_diamond:yellow_diamond_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "compressed_diamond:yellow_diamond"
+  }
+}

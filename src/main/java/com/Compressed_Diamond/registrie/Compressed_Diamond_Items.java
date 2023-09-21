@@ -1,7 +1,7 @@
 package com.Compressed_Diamond.registrie;
 
 import com.Compressed_Diamond.Item.Diamond.*;
-import com.Compressed_Diamond.main.Compressed_Diamond;
+import com.Compressed_Diamond.Compressed_Diamond;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;

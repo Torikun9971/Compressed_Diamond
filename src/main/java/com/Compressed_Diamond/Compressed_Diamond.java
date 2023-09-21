@@ -1,4 +1,4 @@
-package com.Compressed_Diamond.main;
+package com.Compressed_Diamond;
 
 import com.Compressed_Diamond.registrie.Compressed_Diamond_Blocks;
 import com.Compressed_Diamond.registrie.Compressed_Diamond_CreativeTabs;
