@@ -1,24 +1,15 @@
 package com.Compressed_Diamond.registrie;
 
 import com.Compressed_Diamond.Block.Diamond_Block.*;
-import com.Compressed_Diamond.main.Compressed_Diamond;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.block.model.ItemOverride;
+import com.Compressed_Diamond.Compressed_Diamond;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 public class Compressed_Diamond_Blocks {
@@ -39,13 +30,13 @@ public class Compressed_Diamond_Blocks {
     public static final RegistryObject<Block> BLUE_DIAMOND_BLOCK = registerBlock("blue_diamond_block", Blue_Diamond_Block::new);
     public static final RegistryObject<Block> RED_DIAMOND_BLOCK = registerBlock("red_diamond_block", Red_Diamond_Block::new);
 
-    private static <registerBlockItems extends Block> RegistryObject<registerBlockItems> registerBlock(String name, Supplier<registerBlockItems> block) {
-        RegistryObject<registerBlockItems> toReturn = BLOCKS.register(name, block);
+    private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
+        RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
         return toReturn;
     }
 
-    private static <registerBlockItems extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<registerBlockItems> block) {
+    private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
         return Compressed_Diamond_Items.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 
