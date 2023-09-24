@@ -1,38 +1,61 @@
----
-name: Bug report
-about: Create a report to help us improve
-title: ''
-labels: ''
-assignees: ''
-
----
-
-**Describe the bug**
-A clear and concise description of what the bug is.
-
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
-
-**Expected behavior**
-A clear and concise description of what you expected to happen.
-
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
-
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
-
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
-
-**Additional context**
-Add any other context about the problem here.
+name: General Issue
+description: Report a bug or problem with Mekanism
+body:
+  - type: markdown
+    attributes:
+      value: "*Please use the search functionality before reporting an issue. Also take a look at the closed issues!*"
+  - type: textarea
+    attributes:
+      label: Issue description
+      description: A clear and concise description of the issue and if appropriate what the expected outcome should have been.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Steps to reproduce
+      description: If there are specific steps that need to be taken to reproduce the issue list them here.
+      placeholder: |
+        1. Start by doing...
+        2. Next do...
+        3. See result described above
+  - type: dropdown
+    id: minecraft-version
+    attributes:
+      label: Minecraft version
+      description: What version of Minecraft are you using?
+      options:
+        - 1.20.1 (Not yet released, manually compiled)
+        - 1.19.2 (Latest)
+        - 1.19.0 or 1.19.1 (No longer being developed)
+        - 1.18.x or earlier (No longer being developed)
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Forge version
+      description: What version of Forge are you using?
+      placeholder: e.g. 43.2.8
+    validations:
+      required: true
+  - type: dropdown
+    id: mekanism-version
+    attributes:
+      label: Mekanism version
+      description: What version of Mekanism are you using?
+      options:
+        - Current Dev Branch (Manually Compiled)
+        - 10.3.9 (Latest)
+        - 10.3.8
+        - 10.3.7
+        - 10.3.6
+        - Older
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Other relevant versions
+      description: If this issue is related to any other mods list their versions here.
+  - type: input
+    attributes:
+      label: "If a (crash)log is relevant for this issue, link it here: (It's almost always relevant)"
+      description: "Please provide a [gist](https://gist.github.com/) / [pastebin](https://pastebin.com/) / etc link here. (Make sure that it isn't set to expire!)"
