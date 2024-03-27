@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "compressed_white_diamond_block",
+  "ingredients": [
+    {
+      "item": "compressed_diamond:pink_diamond"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "compressed_diamond:compressed_white_diamond_block"
+  }
+}

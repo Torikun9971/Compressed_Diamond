@@ -1,7 +1,19 @@
 {
   "variants": {
-    "": {
+    "facing=north": {
       "model": "compressed_diamond:block/compressed_diamond_block"
+    },
+    "facing=east": {
+      "model": "compressed_diamond:block/compressed_diamond_block",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "compressed_diamond:block/compressed_diamond_block",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "compressed_diamond:block/compressed_diamond_block",
+      "y": 270
     }
   }
 }

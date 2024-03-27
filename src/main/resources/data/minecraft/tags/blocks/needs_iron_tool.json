@@ -13,6 +13,20 @@
     "compressed_diamond:pink_diamond_block",
     "compressed_diamond:green_diamond_block",
     "compressed_diamond:blue_diamond_block",
-    "compressed_diamond:red_diamond_block"
+    "compressed_diamond:red_diamond_block",
+    "compressed_diamond:compressed_diamond_block",
+    "compressed_diamond:compressed_black_diamond_block",
+    "compressed_diamond:compressed_gray_diamond_block",
+    "compressed_diamond:compressed_color_less_diamond_block",
+    "compressed_diamond:compressed_brown_diamond_block",
+    "compressed_diamond:compressed_yellow_diamond_block",
+    "compressed_diamond:compressed_orange_diamond_block",
+    "compressed_diamond:compressed_violet_diamond_block",
+    "compressed_diamond:compressed_purple_diamond_block",
+    "compressed_diamond:compressed_white_diamond_block",
+    "compressed_diamond:compressed_pink_diamond_block",
+    "compressed_diamond:compressed_green_diamond_block",
+    "compressed_diamond:compressed_blue_diamond_block",
+    "compressed_diamond:compressed_red_diamond_block"
   ]
 }

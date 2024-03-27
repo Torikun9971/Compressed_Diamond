@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "blue_diamond",
+  "key": {
+    "#": {
+      "item": "compressed_diamond:compressed_green_diamond_block"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "compressed_diamond:blue_diamond"
+  }
+}

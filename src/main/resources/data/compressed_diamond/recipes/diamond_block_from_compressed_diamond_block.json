@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "diamond_block",
+  "ingredients": [
+    {
+      "item": "compressed_diamond:compressed_diamond_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "diamond_block"
+  }
+}
