@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "purple_diamond_block",
+  "ingredients": [
+    {
+      "item": "compressed_diamond:compressed_purple_diamond_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "compressed_diamond:purple_diamond_block"
+  }
+}

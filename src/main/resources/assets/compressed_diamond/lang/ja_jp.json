@@ -1,6 +1,6 @@
 {
-  "itemGroup.Diamond" : "ダイヤモンド",
-  "item.compressed_diamond.compressed_diamond_block" : "圧縮ダイヤモンドブロック",
+  "itemGroup.compressed_diamond.diamonds" : "ダイヤモンド",
+
   "item.compressed_diamond.black_diamond" : "ブラックダイヤモンド",
   "item.compressed_diamond.gray_diamond" : "グレーダイヤモンド",
   "item.compressed_diamond.color_less_diamond" : "カラーレスダイヤモンド",
@@ -14,7 +14,7 @@
   "item.compressed_diamond.green_diamond" : "グリーンダイヤモンド",
   "item.compressed_diamond.blue_diamond" : "ブルーダイヤモンド",
   "item.compressed_diamond.red_diamond" : "レッドダイヤモンド",
-  "item.compressed_diamond.item_compressed_diamond_block" : "圧縮ダイヤモンドブロック",
+
   "block.compressed_diamond.black_diamond_block" : "ブラックダイヤモンドブロック",
   "block.compressed_diamond.gray_diamond_block" : "グレーダイヤモンドブロック",
   "block.compressed_diamond.color_less_diamond_block" : "カラーレスダイヤモンドブロック",
@@ -27,5 +27,20 @@
   "block.compressed_diamond.pink_diamond_block" : "ピンクダイヤモンドブロック",
   "block.compressed_diamond.green_diamond_block" : "グリーンダイヤモンドブロック",
   "block.compressed_diamond.blue_diamond_block" : "ブルーダイヤモンドブロック",
-  "block.compressed_diamond.red_diamond_block" : "レッドダイヤモンドブロック"
+  "block.compressed_diamond.red_diamond_block" : "レッドダイヤモンドブロック",
+
+  "block.compressed_diamond.compressed_diamond_block" : "圧縮ダイヤモンドブロック",
+  "block.compressed_diamond.compressed_black_diamond_block" : "圧縮ブラックダイヤモンドブロック",
+  "block.compressed_diamond.compressed_gray_diamond_block" : "圧縮グレーダイヤモンドブロック",
+  "block.compressed_diamond.compressed_color_less_diamond_block" : "圧縮カラーレスダイヤモンドブロック",
+  "block.compressed_diamond.compressed_brown_diamond_block" : "圧縮ブラウンダイヤモンドブロック",
+  "block.compressed_diamond.compressed_yellow_diamond_block" : "圧縮イエローダイヤモンドブロック",
+  "block.compressed_diamond.compressed_orange_diamond_block" : "圧縮オレンジダイヤモンドブロック",
+  "block.compressed_diamond.compressed_violet_diamond_block" : "圧縮バイオレットダイヤモンドブロック",
+  "block.compressed_diamond.compressed_purple_diamond_block" : "圧縮パープルダイヤモンドブロック",
+  "block.compressed_diamond.compressed_white_diamond_block" : "圧縮ホワイトダイヤモンドブロック",
+  "block.compressed_diamond.compressed_pink_diamond_block" : "圧縮ピンクダイヤモンドブロック",
+  "block.compressed_diamond.compressed_green_diamond_block" : "圧縮グリーンダイヤモンドブロック",
+  "block.compressed_diamond.compressed_blue_diamond_block" : "圧縮ブルーダイヤモンドブロック",
+  "block.compressed_diamond.compressed_red_diamond_block" : "圧縮レッドダイヤモンドブロック"
 }

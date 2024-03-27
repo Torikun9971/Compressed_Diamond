@@ -1,0 +1,6 @@
+{
+  "parent": "compressed_diamond:template/compressed_diamond_block",
+  "textures": {
+    "0": "compressed_diamond:block/black_diamond_block"
+  }
+}
