@@ -191,7 +191,12 @@ public class CompressedDiamondBlock extends Block {
     }
 
     public void playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
-        destroy(level, pos, state);
+        if (!player.getAbilities().instabuild) {
+            destroy(level, pos, state, true);
+        } else {
+            destroy(level, pos, state, false);
+        }
+
         super.playerWillDestroy(level, pos, state, player);
     }
 
@@ -201,14 +206,14 @@ public class CompressedDiamondBlock extends Block {
                 BlockState detectState = level.getBlockState(pos.relative(direction));
 
                 if (detectState.getBlock() == this.asBlock()) {
-                    destroy(level, pos.relative(direction), detectState);
+                    destroy(level, pos.relative(direction), detectState, true);
                     break;
                 }
             }
         }
     }
 
-    private void destroy(Level level, BlockPos pos, BlockState state) {
+    private void destroy(Level level, BlockPos pos, BlockState state, boolean drop) {
         Direction direction = state.getValue(FACING);
         BlockPos centerPos = pos.relative(direction.getCounterClockWise(), state.getValue(PART).x).relative(direction, state.getValue(PART).z).below(state.getValue(PART).y);
 
@@ -218,7 +223,7 @@ public class CompressedDiamondBlock extends Block {
             if (part != CompressedDiamondPartProperty.CENTER) {
                 level.destroyBlock(partPos, false);
             } else {
-                level.destroyBlock(partPos, true);
+                level.destroyBlock(partPos, drop);
             }
         }
     }

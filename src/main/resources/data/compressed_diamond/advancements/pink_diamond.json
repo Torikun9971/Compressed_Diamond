@@ -1,0 +1,29 @@
+{
+  "parent": "compressed_diamond:white_diamond",
+  "display": {
+    "icon": {
+      "item": "compressed_diamond:pink_diamond"
+    },
+    "frame": "task",
+    "title": {
+      "translate": "advancements.compressed_diamond.pink_diamond"
+    },
+    "description": {
+      "translate": "advancements.compressed_diamond.pink_diamond.description"
+    }
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "compressed_diamond:pink_diamond"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

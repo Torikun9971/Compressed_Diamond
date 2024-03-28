@@ -1,0 +1,31 @@
+{
+  "display": {
+    "icon": {
+      "item": "diamond"
+    },
+    "background": "textures/block/diamond_block.png",
+    "frame": "task",
+    "title": {
+      "translate": "advancements.compressed_diamond.diamond"
+    },
+    "description": {
+      "translate": "advancements.compressed_diamond.diamond.description"
+    },
+    "show_toast": false,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:diamond"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

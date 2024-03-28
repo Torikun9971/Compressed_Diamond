@@ -1,0 +1,29 @@
+{
+  "parent": "compressed_diamond:purple_diamond",
+  "display": {
+    "icon": {
+      "item": "compressed_diamond:white_diamond"
+    },
+    "frame": "task",
+    "title": {
+      "translate": "advancements.compressed_diamond.white_diamond"
+    },
+    "description": {
+      "translate": "advancements.compressed_diamond.white_diamond.description"
+    }
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "compressed_diamond:white_diamond"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

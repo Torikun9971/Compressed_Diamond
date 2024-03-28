@@ -1,0 +1,30 @@
+{
+  "parent": "compressed_diamond:red_diamond",
+  "display": {
+    "icon": {
+      "item": "compressed_diamond:compressed_red_diamond_block"
+    },
+    "frame": "challenge",
+    "title": {
+      "translate": "advancements.compressed_diamond.compressed_red_diamond_block"
+    },
+    "description": {
+      "translate": "advancements.compressed_diamond.compressed_red_diamond_block.description"
+    },
+    "hidden": true
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "compressed_diamond:compressed_red_diamond_block"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "parent": "compressed_diamond:yellow_diamond",
+  "display": {
+    "icon": {
+      "item": "compressed_diamond:orange_diamond"
+    },
+    "frame": "task",
+    "title": {
+      "translate": "advancements.compressed_diamond.orange_diamond"
+    },
+    "description": {
+      "translate": "advancements.compressed_diamond.orange_diamond.description"
+    }
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "compressed_diamond:orange_diamond"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
