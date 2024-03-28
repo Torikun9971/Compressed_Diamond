@@ -2,7 +2,7 @@
 
 圧縮ダイヤモンドを追加するModです
 
-圧縮に必要なダイヤモンドの数は[ここ](https://github.com/Torikun9971/Compressed_Diamond_Mod/COMPRESSION_TABLE.md)
+圧縮に必要なダイヤモンドの数は[ここ](https://github.com/Torikun9971/Compressed_Diamond_Mod/blob/Forge-1.20.1/COMPRESSION_TABLE.md)
 
 ## サポート
 
