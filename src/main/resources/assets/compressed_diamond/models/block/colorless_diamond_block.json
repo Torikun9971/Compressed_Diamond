@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "compressed_diamond:block/color_less_diamond_block"
+    "all": "compressed_diamond:block/colorless_diamond_block"
   },
   "render_type": "translucent"
 }

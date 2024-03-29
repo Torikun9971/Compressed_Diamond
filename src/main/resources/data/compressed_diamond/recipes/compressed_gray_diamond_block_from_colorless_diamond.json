@@ -3,7 +3,7 @@
   "group": "compressed_gray_diamond_block",
   "ingredients": [
     {
-      "item": "compressed_diamond:color_less_diamond"
+      "item": "compressed_diamond:colorless_diamond"
     }
   ],
   "result": {

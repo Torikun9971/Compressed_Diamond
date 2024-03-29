@@ -26,9 +26,9 @@ public class ModCreativeTabs {
                         output.accept(ModItems.GRAY_DIAMOND.get());
                         output.accept(ModBlocks.GRAY_DIAMOND_BLOCK.get());
                         output.accept(ModBlocks.COMPRESSED_GRAY_DIAMOND_BLOCK.get());
-                        output.accept(ModItems.COLOR_LESS_DIAMOND.get());
-                        output.accept(ModBlocks.COLOR_LESS_DIAMOND_BLOCK.get());
-                        output.accept(ModBlocks.COMPRESSED_COLOR_LESS_DIAMOND_BLOCK.get());
+                        output.accept(ModItems.COLORLESS_DIAMOND.get());
+                        output.accept(ModBlocks.COLORLESS_DIAMOND_BLOCK.get());
+                        output.accept(ModBlocks.COMPRESSED_COLORLESS_DIAMOND_BLOCK.get());
                         output.accept(ModItems.BROWN_DIAMOND.get());
                         output.accept(ModBlocks.BROWN_DIAMOND_BLOCK.get());
                         output.accept(ModBlocks.COMPRESSED_BROWN_DIAMOND_BLOCK.get());
