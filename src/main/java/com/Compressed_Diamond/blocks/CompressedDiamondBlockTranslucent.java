@@ -1,11 +1,14 @@
 package com.compressed_diamond.blocks;
 
 import com.compressed_diamond.blocks.properties.CompressedDiamondPartProperty;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Explosion;
@@ -23,9 +26,13 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
+import javax.annotation.Nullable;
+import java.util.List;
+
 public class CompressedDiamondBlockTranslucent extends GlassBlock {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
     public static final EnumProperty<CompressedDiamondPartProperty> PART = EnumProperty.create("part", CompressedDiamondPartProperty.class);
+    private final String diamonds;
 
     public static final VoxelShape NORTH_SHAPE = Shapes.or(
             Block.box(0, 0, -16, 16, 16, 0),
@@ -71,13 +78,20 @@ public class CompressedDiamondBlockTranslucent extends GlassBlock {
             Block.box(-8, 16, -8, 8, 32, 8),
             Block.box(-8 , 16, 8, 8, 32, 24));
 
-    public CompressedDiamondBlockTranslucent(Properties properties) {
+    public CompressedDiamondBlockTranslucent(Properties properties, String diamonds) {
         super(properties.noOcclusion().isValidSpawn((blockState, blockGetter, blockPos, entityType) -> false).isSuffocating((blockState, blockGetter, blockPos) -> false).isViewBlocking((blockState, blockGetter, blockPos) -> false));
+        this.diamonds = diamonds;
         registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH).setValue(PART, CompressedDiamondPartProperty.CENTER));
     }
 
     public void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(FACING, PART);
+    }
+
+    public void appendHoverText(ItemStack stack, @Nullable BlockGetter getter, List<Component> components, TooltipFlag flag) {
+        if (Screen.hasShiftDown()) {
+            components.add(Component.translatable("info.compressed_diamond.diamonds", diamonds));
+        }
     }
 
     public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
