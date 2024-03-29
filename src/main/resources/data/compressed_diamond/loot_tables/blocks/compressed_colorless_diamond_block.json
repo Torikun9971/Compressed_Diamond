@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "compressed_diamond:compressed_color_less_diamond_block"
+          "name": "compressed_diamond:compressed_colorless_diamond_block"
         }
       ],
       "rolls": 1.0

@@ -13,7 +13,7 @@ public class ModItems {
 
     public static final RegistryObject<Item> BLACK_DIAMOND = ITEMS.register("black_diamond", () -> new Diamond(new Item.Properties(), "729"));
     public static final RegistryObject<Item> GRAY_DIAMOND = ITEMS.register("gray_diamond", () -> new Diamond(new Item.Properties(), "531441"));
-    public static final RegistryObject<Item> COLOR_LESS_DIAMOND = ITEMS.register("color_less_diamond", () -> new Diamond(new Item.Properties(), "387420489"));
+    public static final RegistryObject<Item> COLORLESS_DIAMOND = ITEMS.register("colorless_diamond", () -> new Diamond(new Item.Properties(), "387420489"));
     public static final RegistryObject<Item> BROWN_DIAMOND = ITEMS.register("brown_diamond", () -> new Diamond(new Item.Properties().rarity(Rarity.UNCOMMON), "282429536481"));
     public static final RegistryObject<Item> YELLOW_DIAMOND = ITEMS.register("yellow_diamond", () -> new Diamond(new Item.Properties().rarity(Rarity.UNCOMMON), "205891132094649"));
     public static final RegistryObject<Item> ORANGE_DIAMOND = ITEMS.register("orange_diamond", () -> new Diamond(new Item.Properties().rarity(Rarity.UNCOMMON), "150094635296999121"));

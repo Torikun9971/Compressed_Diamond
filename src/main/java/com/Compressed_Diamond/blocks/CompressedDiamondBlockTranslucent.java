@@ -206,7 +206,7 @@ public class CompressedDiamondBlockTranslucent extends GlassBlock {
     }
 
     public void playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
-        if (!player.getAbilities().instabuild) {
+        if (!player.getAbilities().instabuild && player.hasCorrectToolForDrops(state)) {
             destroy(level, pos, state, true);
         } else {
             destroy(level, pos, state, false);

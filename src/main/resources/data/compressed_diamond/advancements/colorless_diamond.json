@@ -1,15 +1,15 @@
 {
-  "parent": "compressed_diamond:colorless_diamond",
+  "parent": "compressed_diamond:gray_diamond",
   "display": {
     "icon": {
-      "item": "compressed_diamond:brown_diamond"
+      "item": "compressed_diamond:colorless_diamond"
     },
     "frame": "task",
     "title": {
-      "translate": "advancements.compressed_diamond.brown_diamond"
+      "translate": "advancements.compressed_diamond.colorless_diamond"
     },
     "description": {
-      "translate": "advancements.compressed_diamond.brown_diamond.description"
+      "translate": "advancements.compressed_diamond.colorless_diamond.description"
     }
   },
   "criteria": {
@@ -19,7 +19,7 @@
         "items": [
           {
             "items": [
-              "compressed_diamond:brown_diamond"
+              "compressed_diamond:colorless_diamond"
             ]
           }
         ]

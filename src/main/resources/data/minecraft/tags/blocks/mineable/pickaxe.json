@@ -3,7 +3,7 @@
   "values" : [
     "compressed_diamond:black_diamond_block",
     "compressed_diamond:gray_diamond_block",
-    "compressed_diamond:color_less_diamond_block",
+    "compressed_diamond:colorless_diamond_block",
     "compressed_diamond:brown_diamond_block",
     "compressed_diamond:yellow_diamond_block",
     "compressed_diamond:orange_diamond_block",
@@ -17,7 +17,7 @@
     "compressed_diamond:compressed_diamond_block",
     "compressed_diamond:compressed_black_diamond_block",
     "compressed_diamond:compressed_gray_diamond_block",
-    "compressed_diamond:compressed_color_less_diamond_block",
+    "compressed_diamond:compressed_colorless_diamond_block",
     "compressed_diamond:compressed_brown_diamond_block",
     "compressed_diamond:compressed_yellow_diamond_block",
     "compressed_diamond:compressed_orange_diamond_block",

@@ -3,7 +3,7 @@
 
   "item.compressed_diamond.black_diamond" : "ブラックダイヤモンド",
   "item.compressed_diamond.gray_diamond" : "グレーダイヤモンド",
-  "item.compressed_diamond.color_less_diamond" : "カラーレスダイヤモンド",
+  "item.compressed_diamond.colorless_diamond" : "カラーレスダイヤモンド",
   "item.compressed_diamond.brown_diamond" : "ブラウンダイヤモンド",
   "item.compressed_diamond.yellow_diamond" : "イエローダイヤモンド",
   "item.compressed_diamond.orange_diamond" : "オレンジダイヤモンド",
@@ -17,7 +17,7 @@
 
   "block.compressed_diamond.black_diamond_block" : "ブラックダイヤモンドブロック",
   "block.compressed_diamond.gray_diamond_block" : "グレーダイヤモンドブロック",
-  "block.compressed_diamond.color_less_diamond_block" : "カラーレスダイヤモンドブロック",
+  "block.compressed_diamond.colorless_diamond_block" : "カラーレスダイヤモンドブロック",
   "block.compressed_diamond.brown_diamond_block" : "ブラウンダイヤモンドブロック",
   "block.compressed_diamond.yellow_diamond_block" : "イエローダイヤモンドブロック",
   "block.compressed_diamond.orange_diamond_block" : "オレンジダイヤモンドブロック",
@@ -32,7 +32,7 @@
   "block.compressed_diamond.compressed_diamond_block" : "圧縮ダイヤモンドブロック",
   "block.compressed_diamond.compressed_black_diamond_block" : "圧縮ブラックダイヤモンドブロック",
   "block.compressed_diamond.compressed_gray_diamond_block" : "圧縮グレーダイヤモンドブロック",
-  "block.compressed_diamond.compressed_color_less_diamond_block" : "圧縮カラーレスダイヤモンドブロック",
+  "block.compressed_diamond.compressed_colorless_diamond_block" : "圧縮カラーレスダイヤモンドブロック",
   "block.compressed_diamond.compressed_brown_diamond_block" : "圧縮ブラウンダイヤモンドブロック",
   "block.compressed_diamond.compressed_yellow_diamond_block" : "圧縮イエローダイヤモンドブロック",
   "block.compressed_diamond.compressed_orange_diamond_block" : "圧縮オレンジダイヤモンドブロック",
@@ -50,8 +50,8 @@
   "advancements.compressed_diamond.black_diamond.description" : "ブラックダイヤモンドを手に入れる",
   "advancements.compressed_diamond.gray_diamond" : "グレーダイヤモンド！",
   "advancements.compressed_diamond.gray_diamond.description" : "グレーダイヤモンドを手に入れる",
-  "advancements.compressed_diamond.color_less_diamond" : "カラーレスダイヤモンド！",
-  "advancements.compressed_diamond.color_less_diamond.description" : "カラーレスダイヤモンドを手に入れる",
+  "advancements.compressed_diamond.colorless_diamond" : "カラーレスダイヤモンド！",
+  "advancements.compressed_diamond.colorless_diamond.description" : "カラーレスダイヤモンドを手に入れる",
   "advancements.compressed_diamond.brown_diamond" : "ブラウンダイヤモンド！",
   "advancements.compressed_diamond.brown_diamond.description" : "ブラウンダイヤモンドを手に入れる",
   "advancements.compressed_diamond.yellow_diamond" : "イエローダイヤモンド！",
@@ -75,5 +75,5 @@
   "advancements.compressed_diamond.compressed_red_diamond_block" : "暇人...?",
   "advancements.compressed_diamond.compressed_red_diamond_block.description" : "圧縮レッドダイヤモンドブロックを手に入れる",
 
-  "info.compressed_diamond.diamonds" : "圧縮したダイヤモンドの数 : %s個"
+  "info.compressed_diamond.diamonds" : "圧縮したダイヤモンド : %s個"
 }

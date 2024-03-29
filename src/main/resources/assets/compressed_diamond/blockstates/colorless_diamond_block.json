@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "compressed_diamond:block/colorless_diamond_block"
+    }
+  }
+}
