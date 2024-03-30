@@ -75,5 +75,5 @@
   "advancements.compressed_diamond.compressed_red_diamond_block" : "暇人...?",
   "advancements.compressed_diamond.compressed_red_diamond_block.description" : "圧縮レッドダイヤモンドブロックを手に入れる",
 
-  "info.compressed_diamond.diamonds" : "圧縮したダイヤモンド : %s個"
+  "info.compressed_diamond.diamonds" : "圧縮されているダイヤモンド : %s個"
 }

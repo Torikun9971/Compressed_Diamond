@@ -8,6 +8,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 
 import javax.annotation.Nullable;
+import java.math.BigInteger;
 import java.util.List;
 
 public class Diamond extends Item {
@@ -20,7 +21,7 @@ public class Diamond extends Item {
 
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
         if (Screen.hasShiftDown()) {
-            components.add(Component.translatable("info.compressed_diamond.diamonds", diamonds));
+            components.add(Component.translatable("info.compressed_diamond.diamonds", new BigInteger(diamonds).multiply(BigInteger.valueOf(stack.getCount()))));
         }
     }
 }
