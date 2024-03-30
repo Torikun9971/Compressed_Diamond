@@ -21,11 +21,13 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nullable;
+import java.math.BigInteger;
 import java.util.List;
 
 public class CompressedDiamondBlock extends Block {
@@ -78,7 +80,7 @@ public class CompressedDiamondBlock extends Block {
             Block.box(-8 , 16, 8, 8, 32, 24));
 
     public CompressedDiamondBlock(Properties properties, String diamonds) {
-        super(properties);
+        super(properties.pushReaction(PushReaction.BLOCK));
         this.diamonds = diamonds;
         registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH).setValue(PART, CompressedDiamondPartProperty.CENTER));
     }
@@ -89,7 +91,7 @@ public class CompressedDiamondBlock extends Block {
 
     public void appendHoverText(ItemStack stack, @Nullable BlockGetter getter, List<Component> components, TooltipFlag flag) {
         if (Screen.hasShiftDown()) {
-            components.add(Component.translatable("info.compressed_diamond.diamonds", diamonds));
+            components.add(Component.translatable("info.compressed_diamond.diamonds", new BigInteger(diamonds).multiply(BigInteger.valueOf(stack.getCount()))));
         }
     }
 
