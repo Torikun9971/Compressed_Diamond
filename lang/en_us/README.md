@@ -1,14 +1,14 @@
-日本語 / [English](https://github.com/Torikun9971/Compressed_Diamond_Mod/blob/Forge-1.20.1/lang/en_us/README.md)
+[日本語](https://github.com/Torikun9971/Compressed_Diamond_Mod/blob/Forge-1.20.1/README.md) / English
 
 - ---
 
-## 概要
+## Overview
 
-圧縮ダイヤモンドを追加するMod
+A mod that adds compressed diamonds.
 
-クラフトに必要なダイヤモンドの数は[ここ](https://github.com/Torikun9971/Compressed_Diamond_Mod/blob/Forge-1.20.1/COMPRESSION_TABLE.md)
+The number of diamonds required for crafting can be found [here](https://github.com/Torikun9971/Compressed_Diamond_Mod/blob/Forge-1.20.1/lang/en_us/COMPRESSION_TABLE.md)
 
-## サポート
+## Support
 
 | 🌈💎                      | Forge                | Fabric               |
 |---------------------------|----------------------|----------------------|
@@ -16,5 +16,5 @@
 | 1.16.X ~ 1.19.X           | <p align="center">⚠* | <p align="center">⚠* |
 | <p align="right">~ 1.15.X | <p align="center">❌  | <p align="center">❌  |
 
-❎*= 作業中  
-⚠*= 作業予定
+❎*= In progress
+⚠*= Planned
