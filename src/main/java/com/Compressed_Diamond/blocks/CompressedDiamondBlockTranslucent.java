@@ -181,10 +181,6 @@ public class CompressedDiamondBlockTranslucent extends GlassBlock {
         return state.getValue(PART) == CompressedDiamondPartProperty.CENTER ? RenderShape.MODEL : RenderShape.INVISIBLE;
     }
 
-    public VoxelShape getVisualShape(BlockState p_48735_, BlockGetter p_48736_, BlockPos p_48737_, CollisionContext p_48738_) {
-        return Shapes.empty();
-    }
-
     public void setPlacedBy(Level level, BlockPos pos, BlockState state, LivingEntity entity, ItemStack stack) {
         Direction direction = state.getValue(FACING);
 
