@@ -1,5 +1,6 @@
 {
   "itemGroup.compressed_diamond.diamonds": "Diamonds",
+
   "item.compressed_diamond.black_diamond": "Black Diamond",
   "item.compressed_diamond.gray_diamond": "Gray Diamond",
   "item.compressed_diamond.colorless_diamond": "Colorless Diamond",
@@ -13,6 +14,7 @@
   "item.compressed_diamond.green_diamond": "Green Diamond",
   "item.compressed_diamond.blue_diamond": "Blue Diamond",
   "item.compressed_diamond.red_diamond": "Red Diamond",
+
   "block.compressed_diamond.black_diamond_block": "Block of Black Diamond",
   "block.compressed_diamond.gray_diamond_block": "Block of Gray Diamond",
   "block.compressed_diamond.colorless_diamond_block": "Block of Colorless Diamond",
@@ -26,6 +28,7 @@
   "block.compressed_diamond.green_diamond_block": "Block of Green Diamond",
   "block.compressed_diamond.blue_diamond_block": "Block of Blue Diamond",
   "block.compressed_diamond.red_diamond_block": "Block of Red Diamond",
+
   "block.compressed_diamond.compressed_diamond_block": "Compressed Block of Diamond",
   "block.compressed_diamond.compressed_black_diamond_block": "Compressed Block of Black Diamond",
   "block.compressed_diamond.compressed_gray_diamond_block": "Compressed Block of Gray Diamond",
@@ -40,6 +43,7 @@
   "block.compressed_diamond.compressed_green_diamond_block": "Compressed Block of Green Diamond",
   "block.compressed_diamond.compressed_blue_diamond_block": "Compressed Block of Blue Diamond",
   "block.compressed_diamond.compressed_red_diamond_block": "Compressed Block of Red Diamond",
+
   "advancements.compressed_diamond.diamond": "Diamonds",
   "advancements.compressed_diamond.diamond.description": "Welcome to the world of diamonds!",
   "advancements.compressed_diamond.black_diamond": "Black Diamonds!",
