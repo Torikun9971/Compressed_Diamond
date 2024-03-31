@@ -18,6 +18,7 @@ public class CompressedDiamond {
 
         ModItems.ITEMS.register(modEventBus);
         ModBlocks.BLOCKS.register(modEventBus);
-        ModCreativeTabs.CREATIVE_MODE_TABS.register(modEventBus);
+
+        modEventBus.register(ModCreativeTabs.CREATIVE_MODE_TABS);
     }
 }

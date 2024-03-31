@@ -81,7 +81,7 @@ public class CompressedDiamondBlockTranslucent extends GlassBlock {
             Block.box(-8 , 16, 8, 8, 32, 24));
 
     public CompressedDiamondBlockTranslucent(Properties properties, String diamonds) {
-        super(properties.pushReaction(PushReaction.BLOCK).noOcclusion().isValidSpawn((blockState, blockGetter, blockPos, entityType) -> false).isSuffocating((blockState, blockGetter, blockPos) -> false).isViewBlocking((blockState, blockGetter, blockPos) -> false));
+        super(properties.noOcclusion().isValidSpawn((blockState, blockGetter, blockPos, entityType) -> false).isSuffocating((blockState, blockGetter, blockPos) -> false).isViewBlocking((blockState, blockGetter, blockPos) -> false));
         this.diamonds = diamonds;
         registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH).setValue(PART, CompressedDiamondPartProperty.CENTER));
     }
@@ -181,8 +181,8 @@ public class CompressedDiamondBlockTranslucent extends GlassBlock {
         return state.getValue(PART) == CompressedDiamondPartProperty.CENTER ? RenderShape.MODEL : RenderShape.INVISIBLE;
     }
 
-    public VoxelShape getVisualShape(BlockState p_48735_, BlockGetter p_48736_, BlockPos p_48737_, CollisionContext p_48738_) {
-        return Shapes.empty();
+    public PushReaction getPistonPushReaction(BlockState state) {
+        return PushReaction.BLOCK;
     }
 
     public void setPlacedBy(Level level, BlockPos pos, BlockState state, LivingEntity entity, ItemStack stack) {
@@ -200,7 +200,7 @@ public class CompressedDiamondBlockTranslucent extends GlassBlock {
         for (CompressedDiamondPartProperty part : CompressedDiamondPartProperty.values()) {
             BlockPos partPos = pos.relative(direction.getClockWise(), part.x).relative(direction.getOpposite(), part.z).above(part.y);
 
-            if (!reader.getBlockState(partPos).canBeReplaced()) {
+            if (!reader.getBlockState(partPos).getMaterial().isReplaceable()) {
                 return false;
             }
         }
