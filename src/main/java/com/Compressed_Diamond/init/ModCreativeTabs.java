@@ -2,6 +2,7 @@ package com.compressed_diamond.init;
 
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -19,7 +20,7 @@ public class ModCreativeTabs {
         }
 
         public Component getDisplayName() {
-            return Component.translatable("itemGroup.compressed_diamond.diamonds");
+            return new TranslatableComponent("itemGroup.compressed_diamond.diamonds");
         }
 
         public void fillItemList(NonNullList<ItemStack> list) {

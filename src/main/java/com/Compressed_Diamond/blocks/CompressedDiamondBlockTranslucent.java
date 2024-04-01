@@ -1,10 +1,14 @@
 package com.compressed_diamond.blocks;
 
 import com.compressed_diamond.blocks.properties.CompressedDiamondPartProperty;
+
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -14,9 +18,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.GlassBlock;
-import net.minecraft.world.level.block.RenderShape;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -83,6 +85,7 @@ public class CompressedDiamondBlockTranslucent extends GlassBlock {
     public CompressedDiamondBlockTranslucent(Properties properties, String diamonds) {
         super(properties.noOcclusion().isValidSpawn((blockState, blockGetter, blockPos, entityType) -> false).isSuffocating((blockState, blockGetter, blockPos) -> false).isViewBlocking((blockState, blockGetter, blockPos) -> false));
         this.diamonds = diamonds;
+        ItemBlockRenderTypes.setRenderLayer(this, RenderType.translucent());
         registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH).setValue(PART, CompressedDiamondPartProperty.CENTER));
     }
 
@@ -92,7 +95,7 @@ public class CompressedDiamondBlockTranslucent extends GlassBlock {
 
     public void appendHoverText(ItemStack stack, @Nullable BlockGetter getter, List<Component> components, TooltipFlag flag) {
         if (Screen.hasShiftDown()) {
-            components.add(Component.translatable("info.compressed_diamond.diamonds", new BigInteger(diamonds).multiply(BigInteger.valueOf(stack.getCount()))));
+            components.add(new TranslatableComponent("info.compressed_diamond.diamonds", new BigInteger(diamonds).multiply(BigInteger.valueOf(stack.getCount()))));
         }
     }
 
