@@ -90,80 +90,79 @@ public class CompressedDiamondBlock extends Block {
     }
 
     public VoxelShape getShape(BlockState state, IBlockReader reader, BlockPos pos, ISelectionContext context) {
+        switch (state.getValue(FACING)) {
+            default: switch (state.getValue(PART)) {
+                default: return NORTH_SHAPE;
+                case TOP: return NORTH_SHAPE.move(-CompressedDiamondPartProperty.TOP.x, -CompressedDiamondPartProperty.TOP.y, -CompressedDiamondPartProperty.TOP.z);
+                case LEFT: return NORTH_SHAPE.move(-CompressedDiamondPartProperty.LEFT.x, -CompressedDiamondPartProperty.LEFT.y, -CompressedDiamondPartProperty.LEFT.z);
+                case CENTER: return NORTH_SHAPE.move(-CompressedDiamondPartProperty.CENTER.x, -CompressedDiamondPartProperty.CENTER.y, -CompressedDiamondPartProperty.CENTER.z);
+                case RIGHT: return NORTH_SHAPE.move(-CompressedDiamondPartProperty.RIGHT.x, -CompressedDiamondPartProperty.RIGHT.y, -CompressedDiamondPartProperty.RIGHT.z);
+                case BOTTOM_LEFT: return NORTH_SHAPE.move(-CompressedDiamondPartProperty.BOTTOM_LEFT.x, -CompressedDiamondPartProperty.BOTTOM_LEFT.y, -CompressedDiamondPartProperty.BOTTOM_LEFT.z);
+                case BOTTOM: return NORTH_SHAPE.move(-CompressedDiamondPartProperty.BOTTOM.x, -CompressedDiamondPartProperty.BOTTOM.y, -CompressedDiamondPartProperty.BOTTOM.z);
+                case BOTTOM_RIGHT: return NORTH_SHAPE.move(-CompressedDiamondPartProperty.BOTTOM_RIGHT.x, -CompressedDiamondPartProperty.BOTTOM_RIGHT.y, -CompressedDiamondPartProperty.BOTTOM_RIGHT.z);
+                case TOP2: return NORTH_SHAPE.move(-CompressedDiamondPartProperty.TOP2.x, -CompressedDiamondPartProperty.TOP2.y, -CompressedDiamondPartProperty.TOP2.z);
+                case LEFT2: return NORTH_SHAPE.move(-CompressedDiamondPartProperty.LEFT2.x, -CompressedDiamondPartProperty.LEFT2.y, -CompressedDiamondPartProperty.LEFT2.z);
+                case CENTER2: return NORTH_SHAPE.move(-CompressedDiamondPartProperty.CENTER2.x, -CompressedDiamondPartProperty.CENTER2.y, -CompressedDiamondPartProperty.CENTER2.z);
+                case RIGHT2: return NORTH_SHAPE.move(-CompressedDiamondPartProperty.RIGHT2.x, -CompressedDiamondPartProperty.RIGHT2.y, -CompressedDiamondPartProperty.RIGHT2.z);
+                case BOTTOM_LEFT2: return NORTH_SHAPE.move(-CompressedDiamondPartProperty.BOTTOM_LEFT2.x, -CompressedDiamondPartProperty.BOTTOM_LEFT2.y, -CompressedDiamondPartProperty.BOTTOM_LEFT2.z);
+                case BOTTOM2: return NORTH_SHAPE.move(-CompressedDiamondPartProperty.BOTTOM2.x, -CompressedDiamondPartProperty.BOTTOM2.y, -CompressedDiamondPartProperty.BOTTOM2.z);
+                case BOTTOM_RIGHT2: return NORTH_SHAPE.move(-CompressedDiamondPartProperty.BOTTOM_RIGHT2.x, -CompressedDiamondPartProperty.BOTTOM_RIGHT2.y, -CompressedDiamondPartProperty.BOTTOM_RIGHT2.z);
+            }
 
-        return switch (state.getValue(FACING)) {
-            default -> switch (state.getValue(PART)) {
-                default -> NORTH_SHAPE;
-                case TOP -> NORTH_SHAPE.move(-CompressedDiamondPartProperty.TOP.x, -CompressedDiamondPartProperty.TOP.y, -CompressedDiamondPartProperty.TOP.z);
-                case LEFT -> NORTH_SHAPE.move(-CompressedDiamondPartProperty.LEFT.x, -CompressedDiamondPartProperty.LEFT.y, -CompressedDiamondPartProperty.LEFT.z);
-                case CENTER -> NORTH_SHAPE.move(-CompressedDiamondPartProperty.CENTER.x, -CompressedDiamondPartProperty.CENTER.y, -CompressedDiamondPartProperty.CENTER.z);
-                case RIGHT -> NORTH_SHAPE.move(-CompressedDiamondPartProperty.RIGHT.x, -CompressedDiamondPartProperty.RIGHT.y, -CompressedDiamondPartProperty.RIGHT.z);
-                case BOTTOM_LEFT -> NORTH_SHAPE.move(-CompressedDiamondPartProperty.BOTTOM_LEFT.x, -CompressedDiamondPartProperty.BOTTOM_LEFT.y, -CompressedDiamondPartProperty.BOTTOM_LEFT.z);
-                case BOTTOM -> NORTH_SHAPE.move(-CompressedDiamondPartProperty.BOTTOM.x, -CompressedDiamondPartProperty.BOTTOM.y, -CompressedDiamondPartProperty.BOTTOM.z);
-                case BOTTOM_RIGHT -> NORTH_SHAPE.move(-CompressedDiamondPartProperty.BOTTOM_RIGHT.x, -CompressedDiamondPartProperty.BOTTOM_RIGHT.y, -CompressedDiamondPartProperty.BOTTOM_RIGHT.z);
-                case TOP2 -> NORTH_SHAPE.move(-CompressedDiamondPartProperty.TOP2.x, -CompressedDiamondPartProperty.TOP2.y, -CompressedDiamondPartProperty.TOP2.z);
-                case LEFT2 -> NORTH_SHAPE.move(-CompressedDiamondPartProperty.LEFT2.x, -CompressedDiamondPartProperty.LEFT2.y, -CompressedDiamondPartProperty.LEFT2.z);
-                case CENTER2 -> NORTH_SHAPE.move(-CompressedDiamondPartProperty.CENTER2.x, -CompressedDiamondPartProperty.CENTER2.y, -CompressedDiamondPartProperty.CENTER2.z);
-                case RIGHT2 -> NORTH_SHAPE.move(-CompressedDiamondPartProperty.RIGHT2.x, -CompressedDiamondPartProperty.RIGHT2.y, -CompressedDiamondPartProperty.RIGHT2.z);
-                case BOTTOM_LEFT2 -> NORTH_SHAPE.move(-CompressedDiamondPartProperty.BOTTOM_LEFT2.x, -CompressedDiamondPartProperty.BOTTOM_LEFT2.y, -CompressedDiamondPartProperty.BOTTOM_LEFT2.z);
-                case BOTTOM2 -> NORTH_SHAPE.move(-CompressedDiamondPartProperty.BOTTOM2.x, -CompressedDiamondPartProperty.BOTTOM2.y, -CompressedDiamondPartProperty.BOTTOM2.z);
-                case BOTTOM_RIGHT2 -> NORTH_SHAPE.move(-CompressedDiamondPartProperty.BOTTOM_RIGHT2.x, -CompressedDiamondPartProperty.BOTTOM_RIGHT2.y, -CompressedDiamondPartProperty.BOTTOM_RIGHT2.z);
-            };
+            case SOUTH: switch (state.getValue(PART)) {
+                default: return SOUTH_SHAPE;
+                case TOP: return SOUTH_SHAPE.move(CompressedDiamondPartProperty.TOP.x, -CompressedDiamondPartProperty.TOP.y, CompressedDiamondPartProperty.TOP.z);
+                case LEFT: return SOUTH_SHAPE.move(CompressedDiamondPartProperty.LEFT.x, -CompressedDiamondPartProperty.LEFT.y, CompressedDiamondPartProperty.LEFT.z);
+                case CENTER: return SOUTH_SHAPE.move(CompressedDiamondPartProperty.CENTER.x, -CompressedDiamondPartProperty.CENTER.y, CompressedDiamondPartProperty.CENTER.z);
+                case RIGHT: return SOUTH_SHAPE.move(CompressedDiamondPartProperty.RIGHT.x, -CompressedDiamondPartProperty.RIGHT.y, CompressedDiamondPartProperty.RIGHT.z);
+                case BOTTOM_LEFT: return SOUTH_SHAPE.move(CompressedDiamondPartProperty.BOTTOM_LEFT.x, -CompressedDiamondPartProperty.BOTTOM_LEFT.y, CompressedDiamondPartProperty.BOTTOM_LEFT.z);
+                case BOTTOM: return SOUTH_SHAPE.move(CompressedDiamondPartProperty.BOTTOM.x, -CompressedDiamondPartProperty.BOTTOM.y, CompressedDiamondPartProperty.BOTTOM.z);
+                case BOTTOM_RIGHT: return SOUTH_SHAPE.move(CompressedDiamondPartProperty.BOTTOM_RIGHT.x, -CompressedDiamondPartProperty.BOTTOM_RIGHT.y, CompressedDiamondPartProperty.BOTTOM_RIGHT.z);
+                case TOP2: return SOUTH_SHAPE.move(CompressedDiamondPartProperty.TOP2.x, -CompressedDiamondPartProperty.TOP2.y, CompressedDiamondPartProperty.TOP2.z);
+                case LEFT2: return SOUTH_SHAPE.move(CompressedDiamondPartProperty.LEFT2.x, -CompressedDiamondPartProperty.LEFT2.y, CompressedDiamondPartProperty.LEFT2.z);
+                case CENTER2: return SOUTH_SHAPE.move(CompressedDiamondPartProperty.CENTER2.x, -CompressedDiamondPartProperty.CENTER2.y, CompressedDiamondPartProperty.CENTER2.z);
+                case RIGHT2: return SOUTH_SHAPE.move(CompressedDiamondPartProperty.RIGHT2.x, -CompressedDiamondPartProperty.RIGHT2.y, CompressedDiamondPartProperty.RIGHT2.z);
+                case BOTTOM_LEFT2: return SOUTH_SHAPE.move(CompressedDiamondPartProperty.BOTTOM_LEFT2.x, -CompressedDiamondPartProperty.BOTTOM_LEFT2.y, CompressedDiamondPartProperty.BOTTOM_LEFT2.z);
+                case BOTTOM2: return SOUTH_SHAPE.move(CompressedDiamondPartProperty.BOTTOM2.x, -CompressedDiamondPartProperty.BOTTOM2.y, CompressedDiamondPartProperty.BOTTOM2.z);
+                case BOTTOM_RIGHT2: return SOUTH_SHAPE.move(CompressedDiamondPartProperty.BOTTOM_RIGHT2.x, -CompressedDiamondPartProperty.BOTTOM_RIGHT2.y, CompressedDiamondPartProperty.BOTTOM_RIGHT2.z);
+            }
 
-            case SOUTH -> switch (state.getValue(PART)) {
-                default -> SOUTH_SHAPE;
-                case TOP -> SOUTH_SHAPE.move(CompressedDiamondPartProperty.TOP.x, -CompressedDiamondPartProperty.TOP.y, CompressedDiamondPartProperty.TOP.z);
-                case LEFT -> SOUTH_SHAPE.move(CompressedDiamondPartProperty.LEFT.x, -CompressedDiamondPartProperty.LEFT.y, CompressedDiamondPartProperty.LEFT.z);
-                case CENTER -> SOUTH_SHAPE.move(CompressedDiamondPartProperty.CENTER.x, -CompressedDiamondPartProperty.CENTER.y, CompressedDiamondPartProperty.CENTER.z);
-                case RIGHT -> SOUTH_SHAPE.move(CompressedDiamondPartProperty.RIGHT.x, -CompressedDiamondPartProperty.RIGHT.y, CompressedDiamondPartProperty.RIGHT.z);
-                case BOTTOM_LEFT -> SOUTH_SHAPE.move(CompressedDiamondPartProperty.BOTTOM_LEFT.x, -CompressedDiamondPartProperty.BOTTOM_LEFT.y, CompressedDiamondPartProperty.BOTTOM_LEFT.z);
-                case BOTTOM -> SOUTH_SHAPE.move(CompressedDiamondPartProperty.BOTTOM.x, -CompressedDiamondPartProperty.BOTTOM.y, CompressedDiamondPartProperty.BOTTOM.z);
-                case BOTTOM_RIGHT -> SOUTH_SHAPE.move(CompressedDiamondPartProperty.BOTTOM_RIGHT.x, -CompressedDiamondPartProperty.BOTTOM_RIGHT.y, CompressedDiamondPartProperty.BOTTOM_RIGHT.z);
-                case TOP2 -> SOUTH_SHAPE.move(CompressedDiamondPartProperty.TOP2.x, -CompressedDiamondPartProperty.TOP2.y, CompressedDiamondPartProperty.TOP2.z);
-                case LEFT2 -> SOUTH_SHAPE.move(CompressedDiamondPartProperty.LEFT2.x, -CompressedDiamondPartProperty.LEFT2.y, CompressedDiamondPartProperty.LEFT2.z);
-                case CENTER2 -> SOUTH_SHAPE.move(CompressedDiamondPartProperty.CENTER2.x, -CompressedDiamondPartProperty.CENTER2.y, CompressedDiamondPartProperty.CENTER2.z);
-                case RIGHT2 -> SOUTH_SHAPE.move(CompressedDiamondPartProperty.RIGHT2.x, -CompressedDiamondPartProperty.RIGHT2.y, CompressedDiamondPartProperty.RIGHT2.z);
-                case BOTTOM_LEFT2 -> SOUTH_SHAPE.move(CompressedDiamondPartProperty.BOTTOM_LEFT2.x, -CompressedDiamondPartProperty.BOTTOM_LEFT2.y, CompressedDiamondPartProperty.BOTTOM_LEFT2.z);
-                case BOTTOM2 -> SOUTH_SHAPE.move(CompressedDiamondPartProperty.BOTTOM2.x, -CompressedDiamondPartProperty.BOTTOM2.y, CompressedDiamondPartProperty.BOTTOM2.z);
-                case BOTTOM_RIGHT2 -> SOUTH_SHAPE.move(CompressedDiamondPartProperty.BOTTOM_RIGHT2.x, -CompressedDiamondPartProperty.BOTTOM_RIGHT2.y, CompressedDiamondPartProperty.BOTTOM_RIGHT2.z);
-            };
+            case WEST: switch (state.getValue(PART)) {
+                default: return WEST_SHAPE;
+                case TOP: return WEST_SHAPE.move(-CompressedDiamondPartProperty.TOP.z, -CompressedDiamondPartProperty.TOP.y, CompressedDiamondPartProperty.TOP.x);
+                case LEFT: return WEST_SHAPE.move(-CompressedDiamondPartProperty.LEFT.z, -CompressedDiamondPartProperty.LEFT.y, CompressedDiamondPartProperty.LEFT.x);
+                case CENTER: return WEST_SHAPE.move(-CompressedDiamondPartProperty.CENTER.z, -CompressedDiamondPartProperty.CENTER.y, CompressedDiamondPartProperty.CENTER.x);
+                case RIGHT: return WEST_SHAPE.move(-CompressedDiamondPartProperty.RIGHT.z, -CompressedDiamondPartProperty.RIGHT.y, CompressedDiamondPartProperty.RIGHT.x);
+                case BOTTOM_LEFT: return WEST_SHAPE.move(-CompressedDiamondPartProperty.BOTTOM_LEFT.z, -CompressedDiamondPartProperty.BOTTOM_LEFT.y, CompressedDiamondPartProperty.BOTTOM_LEFT.x);
+                case BOTTOM: return WEST_SHAPE.move(-CompressedDiamondPartProperty.BOTTOM.z, -CompressedDiamondPartProperty.BOTTOM.y, CompressedDiamondPartProperty.BOTTOM.x);
+                case BOTTOM_RIGHT: return WEST_SHAPE.move(-CompressedDiamondPartProperty.BOTTOM_RIGHT.z, -CompressedDiamondPartProperty.BOTTOM_RIGHT.y, CompressedDiamondPartProperty.BOTTOM_RIGHT.x);
+                case TOP2: return WEST_SHAPE.move(-CompressedDiamondPartProperty.TOP2.z, -CompressedDiamondPartProperty.TOP2.y, CompressedDiamondPartProperty.TOP2.x);
+                case LEFT2: return WEST_SHAPE.move(-CompressedDiamondPartProperty.LEFT2.z, -CompressedDiamondPartProperty.LEFT2.y, CompressedDiamondPartProperty.LEFT2.x);
+                case CENTER2: return WEST_SHAPE.move(-CompressedDiamondPartProperty.CENTER2.z, -CompressedDiamondPartProperty.CENTER2.y, CompressedDiamondPartProperty.CENTER2.x);
+                case RIGHT2: return WEST_SHAPE.move(-CompressedDiamondPartProperty.RIGHT2.z, -CompressedDiamondPartProperty.RIGHT2.y, CompressedDiamondPartProperty.RIGHT2.x);
+                case BOTTOM_LEFT2: return WEST_SHAPE.move(-CompressedDiamondPartProperty.BOTTOM_LEFT2.z, -CompressedDiamondPartProperty.BOTTOM_LEFT2.y, CompressedDiamondPartProperty.BOTTOM_LEFT2.x);
+                case BOTTOM2: return WEST_SHAPE.move(-CompressedDiamondPartProperty.BOTTOM2.z, -CompressedDiamondPartProperty.BOTTOM2.y, CompressedDiamondPartProperty.BOTTOM2.x);
+                case BOTTOM_RIGHT2: return WEST_SHAPE.move(-CompressedDiamondPartProperty.BOTTOM_RIGHT2.z, -CompressedDiamondPartProperty.BOTTOM_RIGHT2.y, CompressedDiamondPartProperty.BOTTOM_RIGHT2.x);
+            }
 
-            case WEST -> switch (state.getValue(PART)) {
-                default -> WEST_SHAPE;
-                case TOP -> WEST_SHAPE.move(-CompressedDiamondPartProperty.TOP.z, -CompressedDiamondPartProperty.TOP.y, CompressedDiamondPartProperty.TOP.x);
-                case LEFT -> WEST_SHAPE.move(-CompressedDiamondPartProperty.LEFT.z, -CompressedDiamondPartProperty.LEFT.y, CompressedDiamondPartProperty.LEFT.x);
-                case CENTER -> WEST_SHAPE.move(-CompressedDiamondPartProperty.CENTER.z, -CompressedDiamondPartProperty.CENTER.y, CompressedDiamondPartProperty.CENTER.x);
-                case RIGHT -> WEST_SHAPE.move(-CompressedDiamondPartProperty.RIGHT.z, -CompressedDiamondPartProperty.RIGHT.y, CompressedDiamondPartProperty.RIGHT.x);
-                case BOTTOM_LEFT -> WEST_SHAPE.move(-CompressedDiamondPartProperty.BOTTOM_LEFT.z, -CompressedDiamondPartProperty.BOTTOM_LEFT.y, CompressedDiamondPartProperty.BOTTOM_LEFT.x);
-                case BOTTOM -> WEST_SHAPE.move(-CompressedDiamondPartProperty.BOTTOM.z, -CompressedDiamondPartProperty.BOTTOM.y, CompressedDiamondPartProperty.BOTTOM.x);
-                case BOTTOM_RIGHT -> WEST_SHAPE.move(-CompressedDiamondPartProperty.BOTTOM_RIGHT.z, -CompressedDiamondPartProperty.BOTTOM_RIGHT.y, CompressedDiamondPartProperty.BOTTOM_RIGHT.x);
-                case TOP2 -> WEST_SHAPE.move(-CompressedDiamondPartProperty.TOP2.z, -CompressedDiamondPartProperty.TOP2.y, CompressedDiamondPartProperty.TOP2.x);
-                case LEFT2 -> WEST_SHAPE.move(-CompressedDiamondPartProperty.LEFT2.z, -CompressedDiamondPartProperty.LEFT2.y, CompressedDiamondPartProperty.LEFT2.x);
-                case CENTER2 -> WEST_SHAPE.move(-CompressedDiamondPartProperty.CENTER2.z, -CompressedDiamondPartProperty.CENTER2.y, CompressedDiamondPartProperty.CENTER2.x);
-                case RIGHT2 -> WEST_SHAPE.move(-CompressedDiamondPartProperty.RIGHT2.z, -CompressedDiamondPartProperty.RIGHT2.y, CompressedDiamondPartProperty.RIGHT2.x);
-                case BOTTOM_LEFT2 -> WEST_SHAPE.move(-CompressedDiamondPartProperty.BOTTOM_LEFT2.z, -CompressedDiamondPartProperty.BOTTOM_LEFT2.y, CompressedDiamondPartProperty.BOTTOM_LEFT2.x);
-                case BOTTOM2 -> WEST_SHAPE.move(-CompressedDiamondPartProperty.BOTTOM2.z, -CompressedDiamondPartProperty.BOTTOM2.y, CompressedDiamondPartProperty.BOTTOM2.x);
-                case BOTTOM_RIGHT2 -> WEST_SHAPE.move(-CompressedDiamondPartProperty.BOTTOM_RIGHT2.z, -CompressedDiamondPartProperty.BOTTOM_RIGHT2.y, CompressedDiamondPartProperty.BOTTOM_RIGHT2.x);
-            };
-
-            case EAST -> switch (state.getValue(PART)) {
-                default -> EAST_SHAPE;
-                case TOP -> EAST_SHAPE.move(CompressedDiamondPartProperty.TOP.z, -CompressedDiamondPartProperty.TOP.y, -CompressedDiamondPartProperty.TOP.x);
-                case LEFT -> EAST_SHAPE.move(CompressedDiamondPartProperty.LEFT.z, -CompressedDiamondPartProperty.LEFT.y, -CompressedDiamondPartProperty.LEFT.x);
-                case CENTER -> EAST_SHAPE.move(CompressedDiamondPartProperty.CENTER.z, -CompressedDiamondPartProperty.CENTER.y, -CompressedDiamondPartProperty.CENTER.x);
-                case RIGHT -> EAST_SHAPE.move(CompressedDiamondPartProperty.RIGHT.z, -CompressedDiamondPartProperty.RIGHT.y, -CompressedDiamondPartProperty.RIGHT.x);
-                case BOTTOM_LEFT -> EAST_SHAPE.move(CompressedDiamondPartProperty.BOTTOM_LEFT.z, -CompressedDiamondPartProperty.BOTTOM_LEFT.y, -CompressedDiamondPartProperty.BOTTOM_LEFT.x);
-                case BOTTOM -> EAST_SHAPE.move(CompressedDiamondPartProperty.BOTTOM.z, -CompressedDiamondPartProperty.BOTTOM.y, -CompressedDiamondPartProperty.BOTTOM.x);
-                case BOTTOM_RIGHT -> EAST_SHAPE.move(CompressedDiamondPartProperty.BOTTOM_RIGHT.z, -CompressedDiamondPartProperty.BOTTOM_RIGHT.y, -CompressedDiamondPartProperty.BOTTOM_RIGHT.x);
-                case TOP2 -> EAST_SHAPE.move(CompressedDiamondPartProperty.TOP2.z, -CompressedDiamondPartProperty.TOP2.y, -CompressedDiamondPartProperty.TOP2.x);
-                case LEFT2 -> EAST_SHAPE.move(CompressedDiamondPartProperty.LEFT2.z, -CompressedDiamondPartProperty.LEFT2.y, -CompressedDiamondPartProperty.LEFT2.x);
-                case CENTER2 -> EAST_SHAPE.move(CompressedDiamondPartProperty.CENTER2.z, -CompressedDiamondPartProperty.CENTER2.y, -CompressedDiamondPartProperty.CENTER2.x);
-                case RIGHT2 -> EAST_SHAPE.move(CompressedDiamondPartProperty.RIGHT2.z, -CompressedDiamondPartProperty.RIGHT2.y, -CompressedDiamondPartProperty.RIGHT2.x);
-                case BOTTOM_LEFT2 -> EAST_SHAPE.move(CompressedDiamondPartProperty.BOTTOM_LEFT2.z, -CompressedDiamondPartProperty.BOTTOM_LEFT2.y, -CompressedDiamondPartProperty.BOTTOM_LEFT2.x);
-                case BOTTOM2 -> EAST_SHAPE.move(CompressedDiamondPartProperty.BOTTOM2.z, -CompressedDiamondPartProperty.BOTTOM2.y, -CompressedDiamondPartProperty.BOTTOM2.x);
-                case BOTTOM_RIGHT2 -> EAST_SHAPE.move(CompressedDiamondPartProperty.BOTTOM_RIGHT2.z, -CompressedDiamondPartProperty.BOTTOM_RIGHT2.y, -CompressedDiamondPartProperty.BOTTOM_RIGHT2.x);
-            };
-        };
+            case EAST: switch (state.getValue(PART)) {
+                default: return EAST_SHAPE;
+                case TOP: return EAST_SHAPE.move(CompressedDiamondPartProperty.TOP.z, -CompressedDiamondPartProperty.TOP.y, -CompressedDiamondPartProperty.TOP.x);
+                case LEFT: return EAST_SHAPE.move(CompressedDiamondPartProperty.LEFT.z, -CompressedDiamondPartProperty.LEFT.y, -CompressedDiamondPartProperty.LEFT.x);
+                case CENTER: return EAST_SHAPE.move(CompressedDiamondPartProperty.CENTER.z, -CompressedDiamondPartProperty.CENTER.y, -CompressedDiamondPartProperty.CENTER.x);
+                case RIGHT: return EAST_SHAPE.move(CompressedDiamondPartProperty.RIGHT.z, -CompressedDiamondPartProperty.RIGHT.y, -CompressedDiamondPartProperty.RIGHT.x);
+                case BOTTOM_LEFT: return EAST_SHAPE.move(CompressedDiamondPartProperty.BOTTOM_LEFT.z, -CompressedDiamondPartProperty.BOTTOM_LEFT.y, -CompressedDiamondPartProperty.BOTTOM_LEFT.x);
+                case BOTTOM: return EAST_SHAPE.move(CompressedDiamondPartProperty.BOTTOM.z, -CompressedDiamondPartProperty.BOTTOM.y, -CompressedDiamondPartProperty.BOTTOM.x);
+                case BOTTOM_RIGHT: return EAST_SHAPE.move(CompressedDiamondPartProperty.BOTTOM_RIGHT.z, -CompressedDiamondPartProperty.BOTTOM_RIGHT.y, -CompressedDiamondPartProperty.BOTTOM_RIGHT.x);
+                case TOP2: return EAST_SHAPE.move(CompressedDiamondPartProperty.TOP2.z, -CompressedDiamondPartProperty.TOP2.y, -CompressedDiamondPartProperty.TOP2.x);
+                case LEFT2: return EAST_SHAPE.move(CompressedDiamondPartProperty.LEFT2.z, -CompressedDiamondPartProperty.LEFT2.y, -CompressedDiamondPartProperty.LEFT2.x);
+                case CENTER2: return EAST_SHAPE.move(CompressedDiamondPartProperty.CENTER2.z, -CompressedDiamondPartProperty.CENTER2.y, -CompressedDiamondPartProperty.CENTER2.x);
+                case RIGHT2: return EAST_SHAPE.move(CompressedDiamondPartProperty.RIGHT2.z, -CompressedDiamondPartProperty.RIGHT2.y, -CompressedDiamondPartProperty.RIGHT2.x);
+                case BOTTOM_LEFT2: return EAST_SHAPE.move(CompressedDiamondPartProperty.BOTTOM_LEFT2.z, -CompressedDiamondPartProperty.BOTTOM_LEFT2.y, -CompressedDiamondPartProperty.BOTTOM_LEFT2.x);
+                case BOTTOM2: return EAST_SHAPE.move(CompressedDiamondPartProperty.BOTTOM2.z, -CompressedDiamondPartProperty.BOTTOM2.y, -CompressedDiamondPartProperty.BOTTOM2.x);
+                case BOTTOM_RIGHT2: return EAST_SHAPE.move(CompressedDiamondPartProperty.BOTTOM_RIGHT2.z, -CompressedDiamondPartProperty.BOTTOM_RIGHT2.y, -CompressedDiamondPartProperty.BOTTOM_RIGHT2.x);
+            }
+        }
     }
 
     public BlockState getStateForPlacement(BlockItemUseContext ctx) {
