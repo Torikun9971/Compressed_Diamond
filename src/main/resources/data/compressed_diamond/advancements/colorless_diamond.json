@@ -13,17 +13,20 @@
     }
   },
   "criteria": {
-    "requirement": {
+    "colorless_diamond": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "items": [
-              "compressed_diamond:colorless_diamond"
-            ]
+            "item": "compressed_diamond:colorless_diamond"
           }
         ]
       }
     }
-  }
+  },
+  "requirements": [
+    [
+      "colorless_diamond"
+    ]
+  ]
 }

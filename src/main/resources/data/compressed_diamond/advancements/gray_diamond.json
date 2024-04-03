@@ -13,17 +13,20 @@
     }
   },
   "criteria": {
-    "requirement": {
+    "gray_diamond": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "items": [
-              "compressed_diamond:gray_diamond"
-            ]
+            "item": "compressed_diamond:gray_diamond"
           }
         ]
       }
     }
-  }
+  },
+  "requirements": [
+    [
+      "gray_diamond"
+    ]
+  ]
 }

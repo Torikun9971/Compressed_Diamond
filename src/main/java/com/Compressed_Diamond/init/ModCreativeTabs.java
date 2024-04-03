@@ -1,26 +1,26 @@
 package com.compressed_diamond.init;
 
-import net.minecraft.core.NonNullList;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
+import net.minecraft.util.NonNullList;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 
 import java.util.ArrayList;
 
 public class ModCreativeTabs {
-    public static final ArrayList<CreativeModeTab> CREATIVE_MODE_TABS = new ArrayList<>();
+    public static final ArrayList<ItemGroup> CREATIVE_MODE_TABS = new ArrayList<>();
 
-    public static final CreativeModeTab DIAMONDS = new CreativeModeTab("compressed_diamond.diamonds") {
+    public static final ItemGroup DIAMONDS = new ItemGroup("compressed_diamond.diamonds") {
 
         public ItemStack makeIcon() {
             CREATIVE_MODE_TABS.add(this);
             return new ItemStack(Items.DIAMOND);
         }
 
-        public Component getDisplayName() {
-            return new TranslatableComponent("itemGroup.compressed_diamond.diamonds");
+        public ITextComponent getDisplayName() {
+            return new TranslationTextComponent("itemGroup.compressed_diamond.diamonds");
         }
 
         public void fillItemList(NonNullList<ItemStack> list) {

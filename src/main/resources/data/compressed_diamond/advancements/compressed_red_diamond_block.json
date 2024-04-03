@@ -14,17 +14,20 @@
     "hidden": true
   },
   "criteria": {
-    "requirement": {
+    "compressed_red_diamond_block": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "items": [
-              "compressed_diamond:compressed_red_diamond_block"
-            ]
+            "item": "compressed_diamond:compressed_red_diamond_block"
           }
         ]
       }
     }
-  }
+  },
+  "requirements": [
+    [
+      "compressed_red_diamond_block"
+    ]
+  ]
 }

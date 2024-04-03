@@ -13,17 +13,20 @@
     }
   },
   "criteria": {
-    "requirement": {
+    "yellow_diamond": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "items": [
-              "compressed_diamond:yellow_diamond"
-            ]
+            "item": "compressed_diamond:yellow_diamond"
           }
         ]
       }
     }
-  }
+  },
+  "requirements": [
+    [
+      "yellow_diamond"
+    ]
+  ]
 }

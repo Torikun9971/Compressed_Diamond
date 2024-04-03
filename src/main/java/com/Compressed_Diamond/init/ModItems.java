@@ -2,11 +2,11 @@ package com.compressed_diamond.init;
 
 import com.compressed_diamond.CompressedDiamond;
 import com.compressed_diamond.items.Diamond;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Rarity;
+import net.minecraft.item.Item;
+import net.minecraft.item.Rarity;
+import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, CompressedDiamond.MOD_ID);

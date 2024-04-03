@@ -1,14 +1,15 @@
 package com.compressed_diamond.blocks;
 
-import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.GlassBlock;
+import com.compressed_diamond.CompressedDiamond;
+
+import net.minecraft.block.GlassBlock;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.IBlockReader;
+import net.minecraftforge.common.ToolType;
 
 import javax.annotation.Nullable;
 import java.math.BigInteger;
@@ -18,14 +19,14 @@ public class DiamondBlockTranslucent extends GlassBlock {
     private final String diamonds;
 
     public DiamondBlockTranslucent(Properties properties, String diamonds) {
-        super(properties.noOcclusion().isValidSpawn((blockState, blockGetter, blockPos, entityType) -> false).isSuffocating((blockState, blockGetter, blockPos) -> false).isViewBlocking((blockState, blockGetter, blockPos) -> false));
+        super(properties.harvestTool(ToolType.PICKAXE).harvestLevel(2).noOcclusion().isValidSpawn((blockState, blockGetter, blockPos, entityType) -> false).isSuffocating((blockState, blockGetter, blockPos) -> false).isViewBlocking((blockState, blockGetter, blockPos) -> false));
         this.diamonds = diamonds;
-        ItemBlockRenderTypes.setRenderLayer(this, RenderType.translucent());
+        CompressedDiamond.TRANSLUCENT_BLOCKS.add(this);
     }
 
-    public void appendHoverText(ItemStack stack, @Nullable BlockGetter getter, List<Component> components, TooltipFlag flag) {
+    public void appendHoverText(ItemStack stack, @Nullable IBlockReader reader, List<ITextComponent> components, ITooltipFlag flag) {
         if (Screen.hasShiftDown()) {
-            components.add(new TranslatableComponent("info.compressed_diamond.diamonds", new BigInteger(diamonds).multiply(BigInteger.valueOf(stack.getCount()))));
+            components.add(new TranslationTextComponent("info.compressed_diamond.diamonds", new BigInteger(diamonds).multiply(BigInteger.valueOf(stack.getCount()))));
         }
     }
 }

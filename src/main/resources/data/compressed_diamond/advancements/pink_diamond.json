@@ -13,17 +13,20 @@
     }
   },
   "criteria": {
-    "requirement": {
+    "pink_diamond": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "items": [
-              "compressed_diamond:pink_diamond"
-            ]
+            "item": "compressed_diamond:pink_diamond"
           }
         ]
       }
     }
-  }
+  },
+  "requirements": [
+    [
+      "pink_diamond"
+    ]
+  ]
 }

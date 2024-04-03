@@ -13,17 +13,20 @@
     }
   },
   "criteria": {
-    "requirement": {
+    "white_diamond": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "items": [
-              "compressed_diamond:white_diamond"
-            ]
+            "item": "compressed_diamond:white_diamond"
           }
         ]
       }
     }
-  }
+  },
+  "requirements": [
+    [
+      "white_diamond"
+    ]
+  ]
 }

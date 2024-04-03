@@ -1,33 +1,25 @@
 package com.compressed_diamond.blocks;
 
+import com.compressed_diamond.CompressedDiamond;
 import com.compressed_diamond.blocks.properties.CompressedDiamondPartProperty;
 
-import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Explosion;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
-import net.minecraft.world.level.material.PushReaction;
-import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.Shapes;
-import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.block.*;
+import net.minecraft.block.material.PushReaction;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.item.ItemStack;
+import net.minecraft.state.*;
+import net.minecraft.state.properties.BlockStateProperties;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.*;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.*;
+import net.minecraftforge.common.ToolType;
 
 import javax.annotation.Nullable;
 import java.math.BigInteger;
@@ -38,7 +30,7 @@ public class CompressedDiamondBlockTranslucent extends GlassBlock {
     public static final EnumProperty<CompressedDiamondPartProperty> PART = EnumProperty.create("part", CompressedDiamondPartProperty.class);
     private final String diamonds;
 
-    public static final VoxelShape NORTH_SHAPE = Shapes.or(
+    public static final VoxelShape NORTH_SHAPE = VoxelShapes.or(
             Block.box(0, 0, -16, 16, 16, 0),
             Block.box(-8, 0, 0, 8,16, 16),
             Block.box(8, 0, 0, 24, 16, 16),
@@ -49,7 +41,7 @@ public class CompressedDiamondBlockTranslucent extends GlassBlock {
             Block.box(-8, 16, 8, 8, 32, 24),
             Block.box(8, 16, 8, 24, 32, 24));
 
-    public static final VoxelShape SOUTH_SHAPE = Shapes.or(
+    public static final VoxelShape SOUTH_SHAPE = VoxelShapes.or(
             Block.box(0, 0, 16, 16, 16, 32),
             Block.box(8, 0, 0, 24, 16, 16),
             Block.box(-8, 0, 0, 8, 16, 16),
@@ -60,7 +52,7 @@ public class CompressedDiamondBlockTranslucent extends GlassBlock {
             Block.box(8, 16, -8, 24, 32, 8),
             Block.box(-8, 16, -8, 8, 32, 8));
 
-    public static final VoxelShape WEST_SHAPE = Shapes.or(
+    public static final VoxelShape WEST_SHAPE = VoxelShapes.or(
             Block.box(-16, 0, 0, 0, 16, 16),
             Block.box(0, 0, 8, 16, 16, 24),
             Block.box(0, 0, -8, 16, 16, 8),
@@ -71,7 +63,7 @@ public class CompressedDiamondBlockTranslucent extends GlassBlock {
             Block.box(8, 16, 8, 24, 32, 24),
             Block.box(8, 16, -8, 24, 32, 8));
 
-    public static final VoxelShape EAST_SHAPE = Shapes.or(
+    public static final VoxelShape EAST_SHAPE = VoxelShapes.or(
             Block.box(16, 0, 0, 32, 16, 16),
             Block.box(0, 0, -8, 16, 16, 8),
             Block.box(0, 0, 8, 16, 16, 24),
@@ -83,23 +75,23 @@ public class CompressedDiamondBlockTranslucent extends GlassBlock {
             Block.box(-8 , 16, 8, 8, 32, 24));
 
     public CompressedDiamondBlockTranslucent(Properties properties, String diamonds) {
-        super(properties.noOcclusion().isValidSpawn((blockState, blockGetter, blockPos, entityType) -> false).isSuffocating((blockState, blockGetter, blockPos) -> false).isViewBlocking((blockState, blockGetter, blockPos) -> false));
+        super(properties.harvestTool(ToolType.PICKAXE).harvestLevel(2).noOcclusion().isValidSpawn((blockState, blockGetter, blockPos, entityType) -> false).isSuffocating((blockState, blockGetter, blockPos) -> false).isViewBlocking((blockState, blockGetter, blockPos) -> false));
         this.diamonds = diamonds;
-        ItemBlockRenderTypes.setRenderLayer(this, RenderType.translucent());
+        CompressedDiamond.TRANSLUCENT_BLOCKS.add(this);
         registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH).setValue(PART, CompressedDiamondPartProperty.CENTER));
     }
 
-    public void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+    public void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> builder) {
         builder.add(FACING, PART);
     }
 
-    public void appendHoverText(ItemStack stack, @Nullable BlockGetter getter, List<Component> components, TooltipFlag flag) {
+    public void appendHoverText(ItemStack stack, @Nullable IBlockReader reader, List<ITextComponent> components, ITooltipFlag flag) {
         if (Screen.hasShiftDown()) {
-            components.add(new TranslatableComponent("info.compressed_diamond.diamonds", new BigInteger(diamonds).multiply(BigInteger.valueOf(stack.getCount()))));
+            components.add(new TranslationTextComponent("info.compressed_diamond.diamonds", new BigInteger(diamonds).multiply(BigInteger.valueOf(stack.getCount()))));
         }
     }
 
-    public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
+    public VoxelShape getShape(BlockState state, IBlockReader reader, BlockPos pos, ISelectionContext context) {
 
         return switch (state.getValue(FACING)) {
             default -> switch (state.getValue(PART)) {
@@ -176,28 +168,28 @@ public class CompressedDiamondBlockTranslucent extends GlassBlock {
         };
     }
 
-    public BlockState getStateForPlacement(BlockPlaceContext ctx) {
+    public BlockState getStateForPlacement(BlockItemUseContext ctx) {
         return defaultBlockState().setValue(FACING, ctx.getHorizontalDirection());
     }
 
-    public RenderShape getRenderShape(BlockState state) {
-        return state.getValue(PART) == CompressedDiamondPartProperty.CENTER ? RenderShape.MODEL : RenderShape.INVISIBLE;
+    public BlockRenderType getRenderShape(BlockState state) {
+        return state.getValue(PART) == CompressedDiamondPartProperty.CENTER ? BlockRenderType.MODEL : BlockRenderType.INVISIBLE;
     }
 
     public PushReaction getPistonPushReaction(BlockState state) {
         return PushReaction.BLOCK;
     }
 
-    public void setPlacedBy(Level level, BlockPos pos, BlockState state, LivingEntity entity, ItemStack stack) {
+    public void setPlacedBy(World world, BlockPos pos, BlockState state, LivingEntity entity, ItemStack stack) {
         Direction direction = state.getValue(FACING);
 
         for (CompressedDiamondPartProperty part : CompressedDiamondPartProperty.values()) {
             BlockPos partPos = pos.relative(direction.getClockWise(), part.x).relative(direction.getOpposite(), part.z).above(part.y);
-            level.setBlock(partPos, defaultBlockState().setValue(FACING, direction).setValue(PART, part), Block.UPDATE_CLIENTS);
+            world.setBlockAndUpdate(partPos, defaultBlockState().setValue(FACING, direction).setValue(PART, part));
         }
     }
 
-    public boolean canSurvive(BlockState state, LevelReader reader, BlockPos pos) {
+    public boolean canSurvive(BlockState state, IWorldReader reader, BlockPos pos) {
         Direction direction = state.getValue(FACING);
 
         for (CompressedDiamondPartProperty part : CompressedDiamondPartProperty.values()) {
@@ -210,30 +202,30 @@ public class CompressedDiamondBlockTranslucent extends GlassBlock {
         return true;
     }
 
-    public void playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
-        if (!player.getAbilities().instabuild && player.hasCorrectToolForDrops(state)) {
-            destroy(level, pos, state, true);
+    public void playerWillDestroy(World world, BlockPos pos, BlockState state, PlayerEntity player) {
+        if (!player.abilities.instabuild && player.hasCorrectToolForDrops(state)) {
+            destroy(world, pos, state, true);
         } else {
-            destroy(level, pos, state, false);
+            destroy(world, pos, state, false);
         }
 
-        super.playerWillDestroy(level, pos, state, player);
+        super.playerWillDestroy(world, pos, state, player);
     }
 
-    public void wasExploded(Level level, BlockPos pos, Explosion explosion) {
-        if (!level.isClientSide()) {
+    public void wasExploded(World world, BlockPos pos, Explosion explosion) {
+        if (!world.isClientSide()) {
             for (Direction direction : Direction.values()) {
-                BlockState detectState = level.getBlockState(pos.relative(direction));
+                BlockState detectState = world.getBlockState(pos.relative(direction));
 
                 if (detectState.getBlock() == this.asBlock()) {
-                    destroy(level, pos.relative(direction), detectState, true);
+                    destroy(world, pos.relative(direction), detectState, true);
                     break;
                 }
             }
         }
     }
 
-    private void destroy(Level level, BlockPos pos, BlockState state, boolean drop) {
+    private void destroy(World world, BlockPos pos, BlockState state, boolean drop) {
         Direction direction = state.getValue(FACING);
         BlockPos centerPos = pos.relative(direction.getCounterClockWise(), state.getValue(PART).x).relative(direction, state.getValue(PART).z).below(state.getValue(PART).y);
 
@@ -241,9 +233,9 @@ public class CompressedDiamondBlockTranslucent extends GlassBlock {
             BlockPos partPos = centerPos.relative(direction.getClockWise(), part.x).relative(direction.getOpposite(), part.z).above(part.y);
 
             if (part != CompressedDiamondPartProperty.CENTER) {
-                level.destroyBlock(partPos, false);
+                world.destroyBlock(partPos, false);
             } else {
-                level.destroyBlock(partPos, drop);
+                world.destroyBlock(partPos, drop);
             }
         }
     }

@@ -13,17 +13,20 @@
     }
   },
   "criteria": {
-    "requirement": {
+    "orange_diamond": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "items": [
-              "compressed_diamond:orange_diamond"
-            ]
+            "item": "compressed_diamond:orange_diamond"
           }
         ]
       }
     }
-  }
+  },
+  "requirements": [
+    [
+      "orange_diamond"
+    ]
+  ]
 }

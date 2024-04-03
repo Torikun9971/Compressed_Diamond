@@ -13,17 +13,20 @@
     }
   },
   "criteria": {
-    "requirement": {
+    "blue_diamond": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "items": [
-              "compressed_diamond:blue_diamond"
-            ]
+            "item": "compressed_diamond:blue_diamond"
           }
         ]
       }
     }
-  }
+  },
+  "requirements": [
+    [
+      "blue_diamond"
+    ]
+  ]
 }

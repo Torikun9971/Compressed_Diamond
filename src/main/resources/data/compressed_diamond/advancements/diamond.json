@@ -15,17 +15,20 @@
     "announce_to_chat": false
   },
   "criteria": {
-    "requirement": {
+    "diamond": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:diamond"
-            ]
+            "item": "minecraft:diamond"
           }
         ]
       }
     }
-  }
+  },
+  "requirements": [
+    [
+      "diamond"
+    ]
+  ]
 }

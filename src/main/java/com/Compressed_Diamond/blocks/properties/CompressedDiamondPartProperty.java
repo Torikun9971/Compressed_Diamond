@@ -1,11 +1,11 @@
 package com.compressed_diamond.blocks.properties;
 
-import net.minecraft.util.StringRepresentable;
-import org.jetbrains.annotations.NotNull;
+import net.minecraft.util.IStringSerializable;
 
+import javax.annotation.Nonnull;
 import java.util.Locale;
 
-public enum CompressedDiamondPartProperty implements StringRepresentable {
+public enum CompressedDiamondPartProperty implements IStringSerializable {
     TOP(0, 0, -1),
     LEFT(-1, 0, 0),
     CENTER(0, 0, 0),
@@ -31,7 +31,7 @@ public enum CompressedDiamondPartProperty implements StringRepresentable {
         this.z = z;
     }
 
-    @NotNull
+    @Nonnull
     public String getSerializedName() {
         return name().toLowerCase(Locale.ROOT);
     }
