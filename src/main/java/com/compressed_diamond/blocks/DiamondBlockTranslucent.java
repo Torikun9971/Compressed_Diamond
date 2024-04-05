@@ -9,6 +9,7 @@ import net.minecraft.world.level.block.GlassBlock;
 
 import javax.annotation.Nullable;
 import java.math.BigInteger;
+import java.text.DecimalFormat;
 import java.util.List;
 
 public class DiamondBlockTranslucent extends GlassBlock {
@@ -21,7 +22,7 @@ public class DiamondBlockTranslucent extends GlassBlock {
 
     public void appendHoverText(ItemStack stack, @Nullable BlockGetter getter, List<Component> components, TooltipFlag flag) {
         if (Screen.hasShiftDown()) {
-            components.add(Component.translatable("info.compressed_diamond.diamonds", new BigInteger(diamonds).multiply(BigInteger.valueOf(stack.getCount()))));
+            components.add(Component.translatable("info.compressed_diamond.diamonds", new DecimalFormat("#,###").format(new BigInteger(diamonds).multiply(BigInteger.valueOf(stack.getCount())))));
         }
     }
 }
