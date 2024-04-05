@@ -31,6 +31,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nullable;
 import java.math.BigInteger;
+import java.text.DecimalFormat;
 import java.util.List;
 
 public class CompressedDiamondBlockTranslucent extends GlassBlock {
@@ -95,7 +96,7 @@ public class CompressedDiamondBlockTranslucent extends GlassBlock {
 
     public void appendHoverText(ItemStack stack, @Nullable BlockGetter getter, List<Component> components, TooltipFlag flag) {
         if (Screen.hasShiftDown()) {
-            components.add(new TranslatableComponent("info.compressed_diamond.diamonds", new BigInteger(diamonds).multiply(BigInteger.valueOf(stack.getCount()))));
+            components.add(new TranslatableComponent("info.compressed_diamond.diamonds", new DecimalFormat("#,###").format(new BigInteger(diamonds).multiply(BigInteger.valueOf(stack.getCount())))));
         }
     }
 
