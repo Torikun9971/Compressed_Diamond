@@ -10,6 +10,7 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.math.BigInteger;
+import java.text.DecimalFormat;
 import java.util.List;
 
 public class Diamond extends Item {
@@ -22,7 +23,7 @@ public class Diamond extends Item {
 
     public void appendHoverText(ItemStack stack, @Nullable World world, List<ITextComponent> components, ITooltipFlag flag) {
         if (Screen.hasShiftDown()) {
-            components.add(new TranslationTextComponent("info.compressed_diamond.diamonds", new BigInteger(diamonds).multiply(BigInteger.valueOf(stack.getCount()))));
+            components.add(new TranslationTextComponent("info.compressed_diamond.diamonds", new DecimalFormat("#,###").format(new BigInteger(diamonds).multiply(BigInteger.valueOf(stack.getCount())))));
         }
     }
 }

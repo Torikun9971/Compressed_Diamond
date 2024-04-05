@@ -23,6 +23,7 @@ import net.minecraftforge.common.ToolType;
 
 import javax.annotation.Nullable;
 import java.math.BigInteger;
+import java.text.DecimalFormat;
 import java.util.List;
 
 public class CompressedDiamondBlockTranslucent extends GlassBlock {
@@ -87,7 +88,7 @@ public class CompressedDiamondBlockTranslucent extends GlassBlock {
 
     public void appendHoverText(ItemStack stack, @Nullable IBlockReader reader, List<ITextComponent> components, ITooltipFlag flag) {
         if (Screen.hasShiftDown()) {
-            components.add(new TranslationTextComponent("info.compressed_diamond.diamonds", new BigInteger(diamonds).multiply(BigInteger.valueOf(stack.getCount()))));
+            components.add(new TranslationTextComponent("info.compressed_diamond.diamonds", new DecimalFormat("#,###").format(new BigInteger(diamonds).multiply(BigInteger.valueOf(stack.getCount())))));
         }
     }
 
